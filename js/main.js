@@ -30,4 +30,17 @@
 
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  const mediaScroll = document.querySelector(".media-stories-scroll");
+  if (mediaScroll) {
+    mediaScroll.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        mediaScroll.scrollBy({ left: -300, behavior: "smooth" });
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        mediaScroll.scrollBy({ left: 300, behavior: "smooth" });
+      }
+    });
+  }
 })();
