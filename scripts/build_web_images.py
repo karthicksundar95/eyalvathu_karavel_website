@@ -6,6 +6,9 @@ Run from project root:
   uv run python scripts/build_web_images.py
 
 Edit SOURCE_MAP below if you rename or replace source files.
+
+The homepage gallery uses photos directly from data/food/ (WebP) — not generated here.
+The header logo uses images/logo_without_bg.png — not generated here.
 """
 
 from __future__ import annotations
@@ -23,9 +26,6 @@ SOURCE_MAP: dict[str, str] = {
     "hero.jpg": "cofarm.jpg",
     "work-banner.jpg": "planting2.jpg",
     "about.jpg": "medical.jpg",
-    "gallery-1.jpg": "planting.jpg",
-    "gallery-2.jpg": "social.jpg",
-    "gallery-3.jpg": "farm.jpg",
     "logo-header.png": "logo_512x512.jpg",
     "logo-footer.png": "Untitled_Project_-_illustrationImage__2_-removebg-preview.png",
     "illustration-mascot.png": "Untitled_Project_-_illustrationImage-removebg-preview.png",

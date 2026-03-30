@@ -33,9 +33,9 @@
         <a class="logo logo--image" href="#top" id="top">
           <img
             class="logo-img"
-            src="images/web/logo-header.png"
-            width="240"
-            height="240"
+            src="images/logo_without_bg.png"
+            width="560"
+            height="445"
             alt="Eyalvathu Karavel"
             decoding="async"
           />
@@ -233,76 +233,57 @@
           <p class="section-kicker">Gallery</p>
           <h2 id="gallery-heading">The journey in photographs</h2>
           <p class="gallery-note">
-            Featured frames below come from your shared images (cropped for the web). Add more daily
-            shots under <code>images/gallery/</code> and duplicate the <code>&lt;img&gt;</code> pattern
-            from these tiles.
+            Daily food distribution — photos from <code>data/food/</code>. Add or replace files there,
+            then update the image paths in <code>index.html</code> if filenames change.
           </p>
-          <div class="gallery-grid">
-            <div class="gallery-item gallery-item--focus gallery-item--focus-a">
+          <div class="gallery-grid gallery-grid--food">
+            <div class="gallery-item">
               <img
-                src="images/web/gallery-1.jpg"
-                alt="Eyalvathu Karavel — community programme in action"
-                width="520"
-                height="520"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="gallery-item gallery-item--focus gallery-item--focus-b">
-              <img
-                src="images/web/gallery-2.jpg"
-                alt="Field moments from our regular outreach"
-                width="520"
-                height="480"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="gallery-item gallery-item--focus gallery-item--focus-c">
-              <img
-                src="images/web/gallery-3.jpg"
-                alt="Community and the land we grow with"
-                width="628"
-                height="338"
+                src="data/food/COMPVK-1-2-1_20260328_164021_806795.webp"
+                alt="Food distribution for children"
                 loading="lazy"
                 decoding="async"
               />
             </div>
             <div class="gallery-item">
-              <div class="gallery-placeholder">
-                <span>Your photo</span>
-                <small>Add images/gallery/03.jpg</small>
-              </div>
+              <img
+                src="data/food/COMPVK-2-2-1_20260328_131957_434374.webp"
+                alt="Food distribution for children"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div class="gallery-item">
-              <div class="gallery-placeholder">
-                <span>Your photo</span>
-                <small>Add images/gallery/04.jpg</small>
-              </div>
+              <img
+                src="data/food/PA5MCQ-1-2-1_20260330_133743_633976.webp"
+                alt="Food distribution for children"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div class="gallery-item">
-              <div class="gallery-placeholder">
-                <span>Your photo</span>
-                <small>Add images/gallery/05.jpg</small>
-              </div>
+              <img
+                src="data/food/PA5MCQ-2-2-1_20260330_132700_955277.webp"
+                alt="Food distribution for children"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div class="gallery-item">
-              <div class="gallery-placeholder">
-                <span>Your photo</span>
-                <small>Add images/gallery/06.jpg</small>
-              </div>
+              <img
+                src="data/food/RJOLMN-1-2-1_20260328_175712_031125.webp"
+                alt="Food distribution for children"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div class="gallery-item">
-              <div class="gallery-placeholder">
-                <span>Your photo</span>
-                <small>Add images/gallery/07.jpg</small>
-              </div>
-            </div>
-            <div class="gallery-item">
-              <div class="gallery-placeholder">
-                <span>Your photo</span>
-                <small>Add images/gallery/08.jpg</small>
-              </div>
+              <img
+                src="data/food/RJOLMN-2-2-1_20260328_172849_682018.webp"
+                alt="Food distribution for children"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           </div>
         </div>
@@ -375,30 +356,55 @@
           <p class="section-kicker">Media &amp; stories</p>
           <h2 id="media-heading">Notes from the field</h2>
           <p class="section-intro">
-            Short updates you can replace with blog posts, press mentions, or video links when you are
-            ready.
+            Essays on nutrition, transparency, education, and grassroots work—written for supporters and
+            neighbours following Eyalvathu Karavel in Tamil Nadu.
           </p>
-          <div class="stories">
-            <article class="story">
-              <div class="story-body">
-                <p class="story-date">Field note</p>
-                <h3>Consistency beats scale, early on</h3>
-                <p>
-                  Showing up with the same reliability as the school bell—that is the quiet promise
-                  behind daily meals.
-                </p>
-              </div>
-            </article>
-            <article class="story">
-              <div class="story-body">
-                <p class="story-date">Birthday drive</p>
-                <h3>Stationery that unlocks classrooms</h3>
-                <p>
-                  Last year’s government school visit reminded us that a full pencil case can change
-                  how a child feels on Monday morning.
-                </p>
-              </div>
-            </article>
+          <div class="stories-grid">
+            <a class="story-card" href="data/media/blogs/why-daily-meals-matter.html">
+              <p class="story-date">Nutrition &amp; dignity</p>
+              <h3>Why daily meals matter in our neighbourhoods</h3>
+              <p>
+                Hunger is uncertainty. When children know food will come, they can learn and rest without
+                bracing for the next hungry hour.
+              </p>
+              <span class="story-read">Read article</span>
+            </a>
+            <a class="story-card" href="data/media/blogs/photo-diary-transparency.html">
+              <p class="story-date">Accountability</p>
+              <h3>The photo diary: transparency as a promise</h3>
+              <p>
+                Our archive of distribution days is a ledger of presence—proof that the work happened,
+                sun or rain.
+              </p>
+              <span class="story-read">Read article</span>
+            </a>
+            <a class="story-card" href="data/media/blogs/birthday-notebooks-classroom.html">
+              <p class="story-date">Education</p>
+              <h3>From one birthday to a classroom of notebooks</h3>
+              <p>
+                Stationery is access. How a government school drive removed one honest barrier in a room
+                full of potential.
+              </p>
+              <span class="story-read">Read article</span>
+            </a>
+            <a class="story-card" href="data/media/blogs/founder-led-grassroots.html">
+              <p class="story-date">Grassroots</p>
+              <h3>Founder-led work: what it really means</h3>
+              <p>
+                No layers between intention and street—proximity, honesty, and the cost of tomatoes this
+                week.
+              </p>
+              <span class="story-read">Read article</span>
+            </a>
+            <a class="story-card" href="data/media/blogs/tamil-nadu-right-to-learn.html">
+              <p class="story-date">Rights &amp; learning</p>
+              <h3>Children, classrooms, and the right to learn</h3>
+              <p>
+                Laws name rights; communities make them real—meals, notebooks, and showing up when the
+                calendar does not.
+              </p>
+              <span class="story-read">Read article</span>
+            </a>
           </div>
         </div>
       </section>
@@ -408,13 +414,18 @@
           <div class="contact-card">
             <h2 id="contact-heading">Contact &amp; connect</h2>
             <p>
-              Share your email and phone when you are comfortable listing them publicly. Until then,
-              replace the placeholders below with your preferred channels.
+              Reach out for partnerships, volunteering, or to learn more about the work in Tamil Nadu.
             </p>
             <ul class="contact-list">
-              <li><strong>Email:</strong> <a href="mailto:hello@eyalvathukaravel.org">hello@eyalvathukaravel.org</a></li>
-              <li><strong>Phone:</strong> <a href="tel:+910000000000">+91 — update number</a></li>
-              <li><strong>Location:</strong> India (add city when ready)</li>
+              <li>
+                <strong>Email:</strong>
+                <a href="mailto:info@eyalvathukaravel.org">info@eyalvathukaravel.org</a>
+              </li>
+              <li>
+                <strong>Phone:</strong>
+                <a href="tel:+919632095823">+91 96320 95823</a>
+              </li>
+              <li><strong>Location:</strong> Tamil Nadu, India</li>
             </ul>
           </div>
           <div>
