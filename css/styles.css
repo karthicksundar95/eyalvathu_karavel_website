@@ -113,9 +113,21 @@ a:hover {
 .logo--image {
   flex-direction: row;
   align-items: center;
-  gap: 0.65rem;
-  max-width: min(100%, 320px);
+  gap: 0.75rem;
+  max-width: min(100%, 380px);
   flex-shrink: 0;
+}
+
+.logo-brand {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.logo-brand-mark {
+  display: block;
+  text-align: center;
+  margin-top: -0.35rem;
 }
 
 .logo-img {
@@ -124,21 +136,65 @@ a:hover {
   max-width: 260px;
   object-fit: contain;
   object-position: left center;
+  display: block;
 }
 
-.logo-tagline {
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+.logo-motto {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   color: var(--color-stone);
-  line-height: 1.25;
+  line-height: 1.35;
   white-space: nowrap;
+  align-self: center;
+  min-width: 0;
+  padding-top: 0.15rem;
+}
+
+.logo-motto .logo-dot {
+  display: inline-block;
+  margin: 0 0.42em;
+  color: var(--color-ink);
+  font-weight: 700;
+  font-size: 1.12em;
+  line-height: 0;
+  vertical-align: 0.05em;
+}
+
+.logo-foundation {
+  margin: 0.2rem 0 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-earth);
+  line-height: 1.2;
+}
+
+.logo-foundation-letters {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 0;
+  letter-spacing: 0;
 }
 
 @media (max-width: 400px) {
-  .logo-tagline {
+  .logo--image {
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+
+  .logo-motto {
     white-space: normal;
-    max-width: 9rem;
+    flex-basis: 100%;
+    text-align: center;
+    padding-top: 0.35rem;
+    font-size: 0.65rem;
   }
 }
 
