@@ -367,20 +367,60 @@ a:hover {
 /* Hero */
 .hero {
   position: relative;
-  min-height: min(78vh, 720px);
+  min-height: min(72vh, 680px);
   display: flex;
   align-items: center;
   padding: 3rem 1.25rem 4rem;
   overflow: hidden;
 }
 
-.hero-bg {
+.hero-media {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(120deg, rgba(42, 35, 24, 0.78) 0%, rgba(74, 63, 50, 0.5) 42%, rgba(95, 111, 86, 0.38) 100%),
-    url("../images/web/hero.jpg") center 42% / cover no-repeat;
   z-index: 0;
+  overflow: hidden;
+  background: var(--color-earth) url("../images/web/hero.jpg") center 42% / cover no-repeat;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 35%;
+  pointer-events: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    120deg,
+    rgba(42, 35, 24, 0.76) 0%,
+    rgba(74, 63, 50, 0.52) 42%,
+    rgba(95, 111, 86, 0.4) 100%
+  );
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: min(56vh, 520px);
+    padding: 2.25rem 1.25rem 3rem;
+  }
+
+  .hero-video {
+    object-position: 50% 30%;
+  }
 }
 
 .hero-inner {
@@ -508,6 +548,48 @@ a:hover {
   height: 100%;
   object-fit: cover;
   object-position: center 40%;
+}
+
+/* About: community farm imagery — editorial grid */
+.about-visual.about-visual--cofarm {
+  display: grid;
+  grid-template-columns: minmax(0, 1.22fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.6rem;
+  aspect-ratio: 4 / 3;
+  max-height: min(520px, 72vw);
+}
+
+.about-visual.about-visual--cofarm .about-img--primary {
+  grid-column: 1;
+  grid-row: 1 / -1;
+  object-position: center 42%;
+}
+
+.about-visual.about-visual--cofarm .about-img--thumb {
+  object-position: center center;
+  min-height: 0;
+}
+
+@media (max-width: 480px) {
+  .about-visual.about-visual--cofarm {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    aspect-ratio: auto;
+    max-height: none;
+  }
+
+  .about-visual.about-visual--cofarm .about-img--primary {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    aspect-ratio: 4 / 3;
+    max-height: 220px;
+  }
+
+  .about-visual.about-visual--cofarm .about-img--thumb {
+    aspect-ratio: 1;
+    max-height: 140px;
+  }
 }
 
 .about-grid {
@@ -733,19 +815,47 @@ a:hover {
 
 .work-banner {
   margin: 0 0 2rem;
+}
+
+.work-banner--split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+.work-banner-panel {
+  margin: 0;
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-soft);
   border: 1px solid rgba(74, 63, 50, 0.1);
-  aspect-ratio: 8/5;
-  max-height: 420px;
+  aspect-ratio: 4 / 3;
+  max-height: 360px;
 }
 
-.work-banner img {
+.work-banner-panel img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 35%;
+}
+
+.work-banner-panel:last-child img {
+  object-position: center center;
+}
+
+@media (max-width: 640px) {
+  .work-banner--split {
+    grid-template-columns: 1fr;
+    max-width: 28rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .work-banner-panel {
+    max-height: 280px;
+  }
 }
 
 /* Gallery */

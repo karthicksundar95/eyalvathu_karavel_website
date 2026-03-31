@@ -18,7 +18,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="preload" href="images/web/hero.jpg" as="image" />
+    <link rel="preload" href="images/web/hero.jpg" as="image" fetchpriority="high" />
     <link rel="icon" href="images/web/favicon.jpg" type="image/jpeg" />
   </head>
   <body>
@@ -101,7 +101,20 @@
 
     <main id="main">
       <section class="hero" aria-labelledby="hero-heading">
-        <div class="hero-bg" role="presentation"></div>
+        <div class="hero-media" aria-hidden="true">
+          <video
+            class="hero-video"
+            poster="images/web/hero.jpg"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+          >
+            <source src="images/NGO_video_transformation_202603312304.mp4" type="video/mp4" />
+          </video>
+          <div class="hero-overlay" role="presentation"></div>
+        </div>
         <div class="hero-inner">
           <p class="hero-badge">Personal · consistent · transparent</p>
           <h1 id="hero-heading">Small acts, every day, where it matters</h1>
@@ -122,12 +135,31 @@
           <p class="section-kicker">About</p>
           <h2 id="about-heading">Why Eyalvathu Karavel</h2>
           <div class="about-split">
-            <div class="about-visual">
+            <div class="about-visual about-visual--cofarm">
               <img
-                src="images/web/about.jpg"
-                alt="Community work in the field — hands-on outreach with Eyalvathu Karavel"
-                width="520"
-                height="520"
+                class="about-img about-img--primary"
+                src="images/cofarm/cofarm.jpg"
+                alt="Community farming and learning — hands-on outreach with Eyalvathu Karavel"
+                width="640"
+                height="480"
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                class="about-img about-img--thumb"
+                src="images/cofarm/farm.jpg"
+                alt="Local farm and fresh produce supporting the programme"
+                width="320"
+                height="240"
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                class="about-img about-img--thumb"
+                src="images/cofarm/planting.jpg"
+                alt="Planting and growing together with the community"
+                width="320"
+                height="240"
                 loading="lazy"
                 decoding="async"
               />
@@ -256,16 +288,28 @@
             <a href="https://www.smilefoundationindia.org/" rel="noopener noreferrer">Smile Foundation</a>—this
             work stays intentionally local and hands-on.
           </p>
-          <figure class="work-banner">
-            <img
-              src="images/web/work-banner.jpg"
-              alt="On the ground — programmes and people we serve"
-              width="800"
-              height="500"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
+          <div class="work-banner work-banner--split">
+            <figure class="work-banner-panel">
+              <img
+                src="images/web/work-banner.jpg"
+                alt="On the ground — programmes and people we serve"
+                width="800"
+                height="500"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+            <figure class="work-banner-panel">
+              <img
+                src="images/helping.png"
+                alt="Helping hands — support and care in the community"
+                width="800"
+                height="600"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+          </div>
           <div class="programmes">
             <article class="programme">
               <div class="programme-icon" aria-hidden="true">&#127859;</div>
