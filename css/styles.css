@@ -610,106 +610,170 @@ a:hover {
   margin-top: 0;
 }
 
-/* About */
-.about-split {
-  display: grid;
-  gap: 2rem;
-  align-items: start;
+/* Why Eyalvathu Karavel (#about) — editorial, scoped to .section-why-ek only */
+.section-why-ek {
+  background:
+    linear-gradient(
+      178deg,
+      rgba(250, 247, 240, 0.65) 0%,
+      var(--color-surface) 48%,
+      rgba(229, 220, 207, 0.35) 100%
+    );
+  padding-top: clamp(3.25rem, 6.5vw, 4.75rem);
+  padding-bottom: clamp(3.5rem, 6.5vw, 5.25rem);
 }
 
-@media (min-width: 900px) {
-  .about-split {
-    grid-template-columns: minmax(280px, 1fr) 1.15fr;
-    gap: 2.5rem;
-    align-items: center;
+.section-why-ek .why-ek-inner {
+  max-width: min(50rem, 100%);
+  margin: 0 auto;
+}
+
+.section-why-ek .why-ek-intro {
+  margin-bottom: clamp(2.25rem, 4vw, 3rem);
+}
+
+.section-why-ek .why-ek-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-stone);
+  margin: 0 0 0.85rem;
+}
+
+.section-why-ek .why-ek-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.2vw, 2.35rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.18;
+  color: var(--color-heading-green);
+  margin: 0 0 1.35rem;
+}
+
+.section-why-ek .why-ek-lead {
+  margin: 0;
+  max-width: 40rem;
+  font-size: clamp(1.02rem, 1.35vw, 1.125rem);
+  line-height: 1.75;
+  color: var(--color-ink);
+  font-weight: 400;
+}
+
+.section-why-ek .why-ek-lead + .why-ek-lead {
+  margin-top: 1.1rem;
+}
+
+.section-why-ek .why-ek-layout {
+  display: grid;
+  gap: clamp(1.75rem, 3vw, 2.5rem);
+  align-items: stretch;
+  margin-bottom: clamp(2rem, 4vw, 2.75rem);
+  min-width: 0;
+}
+
+@media (min-width: 880px) {
+  .section-why-ek .why-ek-layout {
+    grid-template-columns: minmax(0, clamp(260px, 34vw, 380px)) minmax(0, 1fr);
+    gap: 2rem 2.25rem;
+    align-items: stretch;
   }
 }
 
-.about-visual {
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-  border: var(--border-subtle);
-  aspect-ratio: 1;
-  max-height: 520px;
+/* Prevent intrinsic image width from blowing past grid tracks (overlap bug) */
+.section-why-ek .why-ek-layout > * {
+  min-width: 0;
 }
 
-.about-visual img {
+.section-why-ek .why-ek-figure {
+  margin: 0;
   width: 100%;
+  max-width: 100%;
+  border-radius: calc(var(--radius) + 2px);
+  overflow: hidden;
+  border: var(--border-subtle);
+  box-shadow: var(--shadow-card);
+  background: var(--color-cream);
+  aspect-ratio: 4 / 3;
+  max-height: min(320px, 48vw);
+  display: block;
+}
+
+.section-why-ek .why-ek-img {
+  width: 100%;
+  max-width: 100%;
   height: 100%;
+  min-height: 0;
+  display: block;
   object-fit: cover;
   object-position: center 40%;
 }
 
-/* About: community farm imagery — editorial grid */
-.about-visual.about-visual--cofarm {
-  display: grid;
-  grid-template-columns: minmax(0, 1.22fr) minmax(0, 1fr);
-  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 0.6rem;
-  aspect-ratio: 4 / 3;
-  max-height: min(520px, 72vw);
-}
-
-.about-visual.about-visual--cofarm .about-img--primary {
-  grid-column: 1;
-  grid-row: 1 / -1;
-  object-position: center 42%;
-}
-
-.about-visual.about-visual--cofarm .about-img--thumb {
-  object-position: center center;
-  min-height: 0;
-}
-
-@media (max-width: 480px) {
-  .about-visual.about-visual--cofarm {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    aspect-ratio: auto;
+/* Desktop: image column stretches to match text column top and bottom */
+@media (min-width: 880px) {
+  .section-why-ek .why-ek-figure {
+    aspect-ratio: unset;
     max-height: none;
+    height: 100%;
+    min-height: 0;
+    align-self: stretch;
+    display: grid;
+    grid-template: 1fr / 1fr;
   }
 
-  .about-visual.about-visual--cofarm .about-img--primary {
-    grid-column: 1 / -1;
-    grid-row: 1;
-    aspect-ratio: 4 / 3;
-    max-height: 220px;
-  }
-
-  .about-visual.about-visual--cofarm .about-img--thumb {
-    aspect-ratio: 1;
-    max-height: 140px;
+  .section-why-ek .why-ek-img {
+    max-height: none;
+    object-position: center 35%;
   }
 }
 
-.about-grid {
-  display: grid;
-  gap: 2rem;
-}
-
-@media (min-width: 800px) {
-  .about-grid {
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
+@media (max-width: 879px) {
+  .section-why-ek .why-ek-figure {
+    max-height: 280px;
   }
 }
 
-.about-card {
-  background: var(--color-surface);
-  border: var(--border-subtle);
-  border-radius: var(--radius);
-  padding: 2rem 1.85rem;
-  box-shadow: var(--shadow-card);
+.section-why-ek .why-ek-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: min(100%, 28rem);
+  justify-self: start;
+  box-sizing: border-box;
 }
 
-.about-card h3 {
+.section-why-ek .why-ek-pillar {
+  margin: 0;
+  padding: 0 0 1.5rem;
+  border-bottom: 1px solid rgba(var(--rgb-line), 0.12);
+}
+
+.section-why-ek .why-ek-pillar:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.section-why-ek .why-ek-pillar-title {
   font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-size: clamp(1.08rem, 1.5vw, 1.22rem);
   font-weight: 600;
-  margin: 0 0 0.75rem;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
   color: var(--color-heading-green);
-  letter-spacing: -0.01em;
+  margin: 0 0 0.55rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.section-why-ek .why-ek-pillar-text {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.68;
+  color: var(--color-stone);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 /* Motto, core values & guiding principles (#values) */
