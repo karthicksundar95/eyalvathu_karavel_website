@@ -14,12 +14,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="preload" href="images/web/hero.jpg" as="image" fetchpriority="high" />
-    <link rel="icon" href="images/web/favicon.jpg" type="image/jpeg" />
+    <link rel="icon" href="images/gallery/vector/favicon2.png" type="image/png" />
+    <link rel="apple-touch-icon" href="images/gallery/vector/favicon2.png" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -35,18 +36,14 @@
             <div class="logo-brand-mark">
               <img
                 class="logo-img"
-                src="images/logo_without_bg.png"
-                width="560"
-                height="445"
+                src="images/gallery/vector/main_logo-Photoroom.png"
+                width="1280"
+                height="731"
                 alt="Eyalvathu Karavel"
                 decoding="async"
               />
             </div>
-            <p class="logo-foundation" aria-label="Foundation">
-              <span class="logo-foundation-letters" aria-hidden="true">
-                <span>F</span><span>O</span><span>U</span><span>N</span><span>D</span><span>A</span><span>T</span><span>I</span><span>O</span><span>N</span>
-              </span>
-            </p>
+            <p class="logo-foundation">Foundation</p>
           </div>
           <p class="logo-motto">
             Hope<span class="logo-dot" aria-hidden="true">·</span>Help<span class="logo-dot" aria-hidden="true">·</span>Heal
@@ -494,6 +491,37 @@
         </div>
       </section>
 
+      <section class="section section-alt feed-soul" id="feed-a-soul" aria-labelledby="feed-soul-heading">
+        <div class="section-inner">
+          <div class="feed-soul-grid">
+            <div class="feed-soul-visual">
+              <img
+                src="images/gallery/Whisk_5a8fe17fed49dda8aaf4b8adfa76aea6dr.png"
+                alt="Community meal service — warm food shared with dignity"
+                width="1200"
+                height="800"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="feed-soul-copy">
+              <p class="section-kicker">Nourish with dignity</p>
+              <h2 id="feed-soul-heading">Feed a Soul</h2>
+              <p class="section-intro feed-soul-intro">
+                Every meal we share is offered with respect—nourishing hungry people through steady,
+                hands-on outreach rooted in community care and transparent documentation.
+              </p>
+              <div class="feed-soul-cta">
+                <button type="button" class="btn btn-primary js-open-contribution-modal">
+                  Contribute Now
+                </button>
+                <a class="btn btn-outline" href="data/media/blogs/feed-a-soul-program.html">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section" id="media" aria-labelledby="media-heading">
         <div class="section-inner">
           <p class="section-kicker">Media &amp; stories</p>
@@ -612,10 +640,6 @@
                 ></textarea>
               </div>
               <button class="btn btn-primary" type="submit">Send message</button>
-              <p class="form-note">
-                This form is front-end only. Wire it to Formspree, Netlify Forms, or your own backend
-                when you deploy.
-              </p>
             </form>
           </div>
         </div>
@@ -628,10 +652,10 @@
           <div class="footer-brand">
             <img
               class="footer-logo"
-              src="images/web/logo-footer.png"
-              width="578"
-              height="445"
-              alt=""
+              src="images/gallery/vector/stacked_logo-Photoroom.png"
+              width="1280"
+              height="731"
+              alt="Eyalvathu Karavel"
               loading="lazy"
               decoding="async"
             />
@@ -675,6 +699,64 @@
         </p>
       </div>
     </footer>
+
+    <dialog id="contribution-modal" class="contribution-modal" aria-labelledby="contribution-modal-title">
+      <div class="contribution-modal-panel">
+        <button type="button" class="contribution-modal-close" aria-label="Close">&times;</button>
+        <div id="contribution-modal-form-view">
+          <h2 id="contribution-modal-title" class="contribution-modal-title">Express contribution interest</h2>
+          <p class="contribution-modal-note">
+            <em>Donations are not live yet.</em> Share your details so we can note your interest for when
+            official registration is complete. No payment is processed here.
+          </p>
+          <form id="contribution-interest-form" class="contribution-form" action="#" method="post">
+            <div class="form-group">
+              <label for="contrib-name">Full name</label>
+              <input id="contrib-name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="form-group">
+              <label for="contrib-email">Email address</label>
+              <input id="contrib-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="form-group">
+              <label for="contrib-phone">Phone number</label>
+              <input id="contrib-phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label for="contrib-city">City / location</label>
+              <input id="contrib-city" name="city" type="text" autocomplete="address-level2" />
+            </div>
+            <div class="form-group">
+              <label for="contrib-amount">Contribution intent / amount</label>
+              <input
+                id="contrib-amount"
+                name="contribution_intent"
+                type="text"
+                placeholder="e.g. monthly support, one-time amount idea"
+              />
+            </div>
+            <div class="form-group">
+              <label for="contrib-message">Message / note</label>
+              <textarea id="contrib-message" name="message" rows="3"></textarea>
+            </div>
+            <div class="form-group form-group-checkbox">
+              <label class="checkbox-label">
+                <input type="checkbox" id="contrib-notify" name="notify_when_open" value="yes" />
+                <span>Contact me when donations officially open</span>
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary contribution-submit">Express Contribution Interest</button>
+          </form>
+        </div>
+        <div id="contribution-modal-success" class="contribution-modal-success" hidden>
+          <p class="contribution-success-text">
+            Thank you for your kind heart to contribute to the society, but unfortunately we are not accepting
+            donations now as we are in the process of official registration of the trust.
+          </p>
+          <button type="button" class="btn btn-outline js-close-contribution-modal">Close</button>
+        </div>
+      </div>
+    </dialog>
 
     <script src="js/main.js"></script>
   </body>

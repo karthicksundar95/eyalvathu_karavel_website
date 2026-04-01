@@ -43,4 +43,57 @@
       }
     });
   }
+
+  const contributionModal = document.getElementById("contribution-modal");
+  const contributionOpen = document.querySelector(".js-open-contribution-modal");
+  const contributionFormView = document.getElementById("contribution-modal-form-view");
+  const contributionSuccess = document.getElementById("contribution-modal-success");
+  const contributionForm = document.getElementById("contribution-interest-form");
+
+  function resetContributionModal() {
+    if (contributionFormView) contributionFormView.hidden = false;
+    if (contributionSuccess) contributionSuccess.hidden = true;
+    if (contributionForm) contributionForm.reset();
+  }
+
+  function openContributionModal() {
+    resetContributionModal();
+    if (contributionModal && typeof contributionModal.showModal === "function") {
+      contributionModal.showModal();
+    }
+  }
+
+  function closeContributionModal() {
+    if (contributionModal && contributionModal.open) {
+      contributionModal.close();
+    }
+  }
+
+  if (contributionModal && contributionOpen) {
+    contributionOpen.addEventListener("click", openContributionModal);
+
+    contributionModal.addEventListener("click", function (e) {
+      if (e.target === contributionModal) {
+        closeContributionModal();
+      }
+    });
+
+    contributionModal.addEventListener("close", resetContributionModal);
+
+    document.querySelectorAll(".contribution-modal-close, .js-close-contribution-modal").forEach(function (btn) {
+      btn.addEventListener("click", closeContributionModal);
+    });
+
+    if (contributionForm) {
+      contributionForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!contributionForm.checkValidity()) {
+          contributionForm.reportValidity();
+          return;
+        }
+        if (contributionFormView) contributionFormView.hidden = true;
+        if (contributionSuccess) contributionSuccess.hidden = false;
+      });
+    }
+  }
 })();
