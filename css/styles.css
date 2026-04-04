@@ -776,6 +776,11 @@ a:hover {
   hyphens: auto;
 }
 
+/* Motto, core values & guiding principles (#values) — section-alt follows #about; avoid double top rule */
+#about + #values.section-alt {
+  border-top: none;
+}
+
 /* Motto, core values & guiding principles (#values) */
 .motto-block {
   margin: 0 0 3rem;
@@ -825,19 +830,6 @@ a:hover {
   color: var(--color-stone);
 }
 
-.values-subheading {
-  font-family: var(--font-display);
-  font-size: clamp(1.65rem, 3.2vw, 2.15rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--color-heading-green);
-  margin: 3rem 0 0.75rem;
-}
-
-.values-subheading + .section-intro {
-  margin-top: 0;
-}
-
 .principles-grid .programme {
   text-align: left;
 }
@@ -852,6 +844,26 @@ a:hover {
   .programmes.values-core-grid .programme:nth-child(5) {
     grid-column: 2;
   }
+}
+
+/* Space between Core Values and Guiding Principles — align with section vertical rhythm */
+#values .programmes.values-core-grid {
+  margin-bottom: 0;
+}
+
+.values-subheading {
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 3.2vw, 2.15rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-heading-green);
+  margin: clamp(2.75rem, 5.5vw, 4.25rem) 0 0.85rem;
+  padding-top: clamp(2.5rem, 4.5vw, 3.5rem);
+  border-top: var(--border-line-muted);
+}
+
+.values-subheading + .section-intro {
+  margin-top: 0;
 }
 
 /* Current status (registration & donations transparency) */
@@ -1106,14 +1118,6 @@ a:hover {
   object-fit: cover;
 }
 
-.section-intro code,
-.gallery-note code {
-  font-size: 0.9em;
-  padding: 0.1em 0.35em;
-  background: rgba(var(--rgb-line), 0.08);
-  border-radius: var(--radius-btn);
-}
-
 .gallery-placeholder small {
   opacity: 0.85;
   margin-top: 0.35rem;
@@ -1151,6 +1155,18 @@ a:hover {
   margin: 0 0 1rem;
   color: var(--color-stone);
   font-size: 0.98rem;
+}
+
+.campaign-status {
+  margin: 0;
+  margin-top: 1.1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(var(--rgb-line), 0.12);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-heading-green);
 }
 
 .progress {
@@ -1682,3 +1698,4 @@ a:hover {
   width: 100%;
   max-width: 12rem;
 }
+
